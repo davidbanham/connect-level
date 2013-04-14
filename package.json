@@ -1,6 +1,6 @@
 {
   "name": "connect-level",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A levelDB session store for Connect",
   "main": "lib/connect-level.js",
   "scripts": {
@@ -8,7 +8,10 @@
     "prepublish": "cake build",
     "pretest": "cake build"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davidbanham/connect-level.git"
+  },
   "author": "david@banham.id.au",
   "license": "BSD",
   "keywords": [
@@ -24,5 +27,7 @@
     "coffee-script": "~1.6.2",
     "async": "~0.2.7",
     "connect": "~2.7.5"
-  }
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "36a4bb2b44c49b01d35f54fa73f4f860a3fa7f27"
 }
