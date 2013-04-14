@@ -6,6 +6,8 @@ isExpired = (data) ->
   return true if data.expires < now
   return false
 
+nocb = () ->
+
 module.exports = (connect) ->
   class LevelStore extends connect.session.Store
     constructor: (@options = {}) ->
@@ -25,6 +27,7 @@ module.exports = (connect) ->
         @emit 'ready'
     
     get: (sid, cb) ->
+      cb ?= nocb
       @db.get sid, (err, data) ->
         return cb() if err?.name == "NotFoundError"
         return cb err if err?
@@ -36,16 +39,19 @@ module.exports = (connect) ->
         return cb null, parsed.sess
       
     set: (sid, sess, cb) ->
+      cb ?= nocb
       expires = new Date().getTime() + sess.cookie.maxAge if sess.cookie.maxAge?
       expires = sess.cookie.expires if sess.cookie.expires?
       @db.put sid, JSON.stringify({expires: expires, sess: sess}), (err, data) ->
         return cb err
     
     destroy: (sid, cb) ->
+      cb ?= nocb
       @db.del sid, (err) ->
         return cb err
     
     teardown: (path, cb) ->
+      cb ?= nocb
       @db.close () ->
         levelup.destroy path, (err) ->
           return cb err
