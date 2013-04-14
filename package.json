@@ -1,0 +1,28 @@
+{
+  "name": "connect-level",
+  "version": "0.0.0",
+  "description": "A levelDB session store for Connect",
+  "main": "lib/connect-level.js",
+  "scripts": {
+    "test": "coffee test.coffee",
+    "prepublish": "cake build",
+    "pretest": "cake build"
+  },
+  "repository": "",
+  "author": "david@banham.id.au",
+  "license": "BSD",
+  "keywords": [
+    "connect",
+    "session",
+    "store",
+    "leveldb"
+  ],
+  "dependencies": {
+    "levelup": "~0.7.0"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "async": "~0.2.7",
+    "connect": "~2.7.5"
+  }
+}
