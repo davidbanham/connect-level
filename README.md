@@ -22,5 +22,7 @@ There are options you can pass to the store if you like, but you don't need to.
 
     connect().use(connect.session({ store: new RedisStore(options), secret: 'super sekkrit' }))
 
+[![Build Status](https://travis-ci.org/davidbanham/connect-level.png?branch=master)](https://travis-ci.org/davidbanham/connect-level)
+
 ## License
 Licensed under [BSD](LICENSE.md)
