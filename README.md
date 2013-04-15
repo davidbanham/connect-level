@@ -11,7 +11,7 @@ This store requires no external processes, databases, etc.
     var connect = require('connect')
     , LevelStore = require('connect-level')(connect)
 
-    connect().use(connect.session({ store: new RedisStore(), secret: 'super sekkrit' }))
+    connect().use(connect.session({ store: new LevelStore(), secret: 'super sekkrit' }))
 
 ## Options
 There are options you can pass to the store if you like, but you don't need to.
@@ -20,7 +20,7 @@ There are options you can pass to the store if you like, but you don't need to.
       path: './data/sessions' // Optional. Defaults to ./connect-level-sessionstore
       interval: 6000 // Optional. How often the database prunes expired sessions in ms. Defaults to 1 hour, however expiry is checked as keys are read out.
 
-    connect().use(connect.session({ store: new RedisStore(options), secret: 'super sekkrit' }))
+    connect().use(connect.session({ store: new LevelStore(options), secret: 'super sekkrit' }))
 
 [![Build Status](https://travis-ci.org/davidbanham/connect-level.png?branch=master)](https://travis-ci.org/davidbanham/connect-level)
 
