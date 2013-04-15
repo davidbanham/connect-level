@@ -24,3 +24,4 @@ There are options you can pass to the store if you like, but you don't need to.
 
 ## License
 BSD
+.
