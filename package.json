@@ -4,7 +4,7 @@
   "description": "A levelDB session store for Connect",
   "main": "lib/connect-level.js",
   "scripts": {
-    "test": "coffee test.coffee",
+    "test": "./node_modules/.bin/mocha -R spec --compilers coffee:coffee-script test.coffee",
     "prepublish": "cake build",
     "pretest": "cake build"
   },
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "coffee-script": "~1.6.2",
-    "async": "~0.2.7",
+    "mocha": "~1.9.0",
     "connect": "~2.7.5"
   },
   "readmeFilename": "README.md",
