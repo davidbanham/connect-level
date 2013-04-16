@@ -1,6 +1,6 @@
 {
   "name": "connect-level",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A levelDB session store for Connect",
   "main": "lib/connect-level.js",
   "scripts": {
